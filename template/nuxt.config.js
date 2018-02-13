@@ -1,7 +1,8 @@
-module.exports = {
-  /*
-  ** Headers of the page
-  */
+const path = require('path');
+const StylelintPlugin = require('stylelint-webpack-plugin');
+
+const nuxtConf = {
+  srcDir: 'app/',
   head: {
     title: '{{ name }}',
     meta: [
@@ -13,26 +14,37 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Customize the progress bar color
-  */
-  loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
+    plugins: [
+      new StylelintPlugin()
+    ],
+    vendor: ['lodash'],
+    extend (config, ctx) {
+      const urlLoader = config.module.rules.find((rule) => rule.loader === 'url-loader')
+      urlLoader.exclude = [/assets\/svg/];
+
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
-    }
-  }
+      config.module.rules.push({
+        test: /\.svg$/,
+        include: [
+          path.resolve(__dirname, 'app/assets/svg')
+        ],
+        loader: 'svg-sprite-loader',
+        options: {
+          runtimeCompat: true
+        }
+      });
+    },
+  },
+  plugins: [
+  ]
 }
+
+module.exports = nuxtConf;

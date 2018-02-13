@@ -1,6 +1,6 @@
 {
   "name": "{{ name }}",
-  "version": "1.0.0",
+  "version": "{{ version }}",
   "description": "{{ description }}",
   "author": "{{ author }}",
   "private": true,
@@ -13,13 +13,30 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@pixela/prismic-vue": "0.0.2",
+    "@pixela/simple-layout": "0.1.12",
+    "lodash": "^4.17.4",
+    "normalize.css": "^7.0.0",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
+    "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "eslint": "^4.15.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-webpack-plugin": "^0.9.0",
+    "stylelint": "^8.4.0",
+    "svg-sprite-loader": "^3.6.2",
+    "url-loader": "^0.6.2"
   }
 }
