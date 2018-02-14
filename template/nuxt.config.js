@@ -43,6 +43,10 @@ const nuxtConf = {
       });
     },
   },
+  css: [
+    'normalize.css',
+    '@/styles/index.scss',
+  ],
   plugins: [
   ]
 }

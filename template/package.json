@@ -1,6 +1,6 @@
 {
   "name": "{{ name }}",
-  "version": "{{ version }}",
+  "version": "1.0.0",
   "description": "{{ description }}",
   "author": "{{ author }}",
   "private": true,
@@ -13,13 +13,13 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@pixela/prismic-vue": "0.0.2",
-    "@pixela/simple-layout": "0.1.12",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0-rc11"
   },
   "devDependencies": {
+    "@pixela/prismic-vue": "0.0.2",
+    "@pixela/simple-layout": "0.1.12",
     "babel-eslint": "^8.2.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
