@@ -20,6 +20,11 @@ module.exports = {
       'type': 'string',
       'message': 'Author'
     },
+    prismicRepo: {
+      'type': 'string',
+      'required': true,
+      'message': 'Prismic endpoint'
+    },
     version: {
       'type': 'string',
       'message': 'Initial version'
